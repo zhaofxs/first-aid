@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="form-horizontal" id="upload" method="post" action="/view/upload" enctype="multipart/form-data">
+                <div class="form-group" align="center">
+                    <div class="col-md-4 col-sm-4  col-xs-4 col-lg-4">
+                       文件上传： <input type="file" class="form-control" name="file" id="file">
+                       上传地址：<select name="shipin">
+                        <option value="/video/">video视频文件</option>
+                        <option value="/file/">file表格文件</option>
+                        <option value="/image/">image照片</option>
+                       </select>
+                    <br>
+                       <input type="submit" value="上传">
+                    </div>
+                </div>
+
+              </form>
+</body>
+</html>

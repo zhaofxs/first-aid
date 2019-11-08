@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.firstaid.mapper.UserMapper">
+    <select id="getUsers" parameterType="com.example.firstaid.dto.UserEntity" resultType="com.example.firstaid.dto.UserEntity">
+        select
+        id,
+        user_name userName,
+        sex,
+        city,
+        classify
+        from sys_user
+        <where>
+            <if test="id != null and id != ''">
+                id = #{id}
+            </if>
+        </where>
+        limit #{startNum},#{limit}
+    </select>
+    <select id="getUsersCount" parameterType="com.example.firstaid.dto.UserEntity" resultType="java.lang.Integer">
+        select
+        count(id)
+        from sys_user
+        <where>
+            <if test="id != null and id != ''">
+                id = #{id}
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.firstaid.mapper.FileUploadMapper">
+    <select id="getFile" resultType="com.example.firstaid.dto.FileEntity">
+        select
+        file_id fileId,
+        titl_orig titleOrig,
+        title_alter titleAlter,
+        size,
+        type,
+        path,
+        upload_time uploadTime
+        from upload_file
+    </select>
+    <insert id="insert" parameterType="com.example.firstaid.dto.FileEntity">
+        insert into upload_file(
+        file_id,
+        titl_orig,
+        title_alter,
+        size,
+        type,
+        path,
+        upload_time
+        )
+        values (
+         #{fileId},
+         #{titleOrig},
+         #{titleAlter},
+         #{size},
+         #{type},
+         #{path},
+         #{uploadTime}
+        )
+    </insert>
+</mapper>
