@@ -33,4 +33,10 @@ public class IndexController {
         }
         return "login";
     }
+
+    @RequestMapping(value="/logininininin")
+    public String logininininin(){
+        return "login";
+    }
+
 }
