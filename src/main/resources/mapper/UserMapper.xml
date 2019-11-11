@@ -4,6 +4,8 @@
     <select id="getUsers" parameterType="com.example.firstaid.dto.UserEntity" resultType="com.example.firstaid.dto.UserEntity">
         select
         id,
+        login_account loginAccount,
+        password,
         user_name userName,
         sex,
         city,
@@ -12,6 +14,9 @@
         <where>
             <if test="id != null and id != ''">
                 id = #{id}
+            </if>
+            <if test="loginAccount != null and loginAccount != ''">
+                and login_account = #{loginAccount}
             </if>
         </where>
         limit #{startNum},#{limit}

@@ -3,12 +3,16 @@ package com.example.firstaid.controller;
 import com.example.firstaid.dto.Result;
 import com.example.firstaid.dto.UserEntity;
 import com.example.firstaid.service.UserService;
+import com.example.firstaid.service.WebSocketServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,5 +35,7 @@ public class UserController {
     public Object list(UserEntity userCondition){
         return userService.list(userCondition);
     }
+
+
 
 }

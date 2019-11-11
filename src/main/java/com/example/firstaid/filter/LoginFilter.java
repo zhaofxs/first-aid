@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 public class LoginFilter implements Filter{
 
     //排除不拦截的url
-    private static final String[] excludePathPatterns = { "/login", ".css", ".js"};
+    private static final String[] excludePathPatterns = { "/toLogin","/login", ".css", ".js"};
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -49,7 +49,7 @@ public class LoginFilter implements Filter{
             chain.doFilter(request, response);
             return;
         }
-        res.sendRedirect("/login");
+        res.sendRedirect("/toLogin");
 
     }
 
